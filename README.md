@@ -13,6 +13,15 @@ For numbers 1 through 100,
 - if the number is divisible by 3 and 5 (15) print FizzBuzz;
 - else, print the number.
 
+# Build & Test
+
+```
+dub build -b debug -c debug
+dub build -b release -c release
+dub build -b release -c publish
+dub test -b unittest-cov
+```
+
 # Special Thanks
 
 Inspired by the following project.
