@@ -1,0 +1,30 @@
+name "fizzbuzzenterpriseedition"
+description "An implementation of FizzBuzz."
+authors "lempiji"
+license "public domain"
+
+targetName "fizzbuzz"
+
+configuration "debug" {
+    targetType "executable"
+    targetPath "bin/debug"
+    
+    buildOptions "alwaysStackFrame"
+}
+
+configuration "release" {
+    targetType "executable"
+    targetPath "bin/release"
+}
+
+configuration "publish" {
+    targetType "executable"
+    targetPath "bin/release"
+
+    postBuildCommands "del bin\\release\\*.pdb" platform="windows"
+}
+
+configuration "unittest" {
+    dependency "silly" version="~>1.1.1"
+    targetPath "bin/unittest"
+}

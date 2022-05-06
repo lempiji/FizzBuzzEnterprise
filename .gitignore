@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/fizzbuzzenterprise
+fizzbuzzenterprise.so
+fizzbuzzenterprise.dylib
+fizzbuzzenterprise.dll
+fizzbuzzenterprise.a
+fizzbuzzenterprise.lib
+fizzbuzzenterprise-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
