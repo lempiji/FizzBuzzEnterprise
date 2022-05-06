@@ -16,16 +16,20 @@ else
 
 		import fizzbuzz.strategy.integer : FizzStrategy, BuzzStrategy, NoFizzNoBuzzStrategy, EverythingPassThroughStrategy;
 		import fizzbuzz.writer.standard : StdOutWriter;
-		import fizzbuzz.printer.basic : FizzPrinter,BuzzPrinter,IntegerPassThroughPrinter,NewLinePrinter;
+		import fizzbuzz.printer.basic : FizzPrinter, BuzzPrinter, IntegerPassThroughPrinter, NewLinePrinter;
 
+		// TODO make configurable
 		auto stanardOutputWriter = new StdOutWriter;
 
+		// TODO Refactor: Extract as Solution.
+		// TODO make configurable
 		StrategyPrinterPair[] strategyAndPrinterPairs;
 		strategyAndPrinterPairs ~= strategyPrinterPair(new FizzStrategy, new FizzPrinter(stanardOutputWriter));
 		strategyAndPrinterPairs ~= strategyPrinterPair(new BuzzStrategy, new BuzzPrinter(stanardOutputWriter));
 		strategyAndPrinterPairs ~= strategyPrinterPair(new NoFizzNoBuzzStrategy, new IntegerPassThroughPrinter(stanardOutputWriter));
 		strategyAndPrinterPairs ~= strategyPrinterPair(new EverythingPassThroughStrategy, new NewLinePrinter(stanardOutputWriter));
 
+		// TODO TODO Refactor: Extract as Executor.
 		foreach (FizzBuzzLoopCounter loopCounter; FizzBuzzLoopCounterRange(Constants.LOOP_INIT_VALUE, Constants.DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE))
 		{
 			foreach (strategyAndPrinter; strategyAndPrinterPairs)
