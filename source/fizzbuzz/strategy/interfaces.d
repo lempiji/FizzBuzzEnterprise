@@ -20,9 +20,28 @@ unittest
 }
 
 ///
+class IsEvenlyDivisibleStrategyObject(T) : IsEvenlyDivisibleStrategy
+{
+    T strategy;
+
+    this(T strategy) pure nothrow @safe @nogc
+    {
+        this.strategy = strategy;
+    }
+
+    this(ref T strategy) pure nothrow @safe @nogc
+    {
+        this.strategy = strategy;
+    }
+    
+    bool isEvenlyDivisible(in FizzBuzzLoopCounter theInteger)
+    {
+        return this.strategy.isEvenlyDivisible(theInteger);
+    }
+}
+
+///
 IsEvenlyDivisibleStrategy evenlyDivisibleStrategyObject(T)(auto ref T strategy)
-out(obj; obj !is null)
-do
 {
     static if (is(T : IsEvenlyDivisibleStrategy))
     {
@@ -30,27 +49,7 @@ do
     }
     else static if (isIsEvenlyDivisibleStrategy!T)
     {
-        static class IsEvenlyDivisibleStrategyObject : IsEvenlyDivisibleStrategy
-        {
-            T strategy;
-
-            this(T strategy) pure nothrow @safe @nogc
-            {
-                this.strategy = strategy;
-            }
-
-            this(ref T strategy) pure nothrow @safe @nogc
-            {
-                this.strategy = strategy;
-            }
-            
-            bool isEvenlyDivisible(in FizzBuzzLoopCounter theInteger)
-            {
-                return this.strategy.isEvenlyDivisible(theInteger);
-            }
-        }
-
-        return new IsEvenlyDivisibleStrategyObject(strategy);
+        return new IsEvenlyDivisibleStrategyObject!T(strategy);
     }
     else
     {
@@ -74,4 +73,3 @@ unittest
     assert(strategyObject !is null);
     assert(strategyObject.isEvenlyDivisible(FizzBuzzLoopCounter(1)));
 }
-
