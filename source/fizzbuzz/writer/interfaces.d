@@ -15,6 +15,12 @@ interface Writer
     void writeln();
 }
 
+@("isWriter!Writer must be true")
+unittest
+{
+    static assert(isWriter!Writer);
+}
+
 ///
 class WriterObject(T) : Writer if (isWriter!T)
 {

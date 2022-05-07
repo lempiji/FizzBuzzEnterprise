@@ -14,6 +14,12 @@ interface Printer
     void print(in FizzBuzzLoopCounter counter);
 }
 
+@("isPrinter!Printer must be true")
+unittest
+{
+    static assert(isPrinter!Printer);
+}
+
 ///
 class PrinterObject(T) : Printer if (isPrinter!T)
 {

@@ -13,7 +13,7 @@ interface IsEvenlyDivisibleStrategy
     bool isEvenlyDivisible(in FizzBuzzLoopCounter theInteger);
 }
 
-@("isIsEvenlyDivisibleStrategy by IsEvenlyDivisibleStrategy is true")
+@("isIsEvenlyDivisibleStrategy!IsEvenlyDivisibleStrategy must be true")
 unittest
 {
     static assert(isIsEvenlyDivisibleStrategy!IsEvenlyDivisibleStrategy);
