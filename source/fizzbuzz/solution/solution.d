@@ -18,13 +18,13 @@ class EnterpriseGradeSolution
     }
 
     private void initializeStrategyAndPrinters()
-    in(writer !is null)
+    in (writer !is null)
     do
     {
         pairs ~= strategyPrinterPair(new FizzStrategy, new FizzPrinter(writer));
-		pairs ~= strategyPrinterPair(new BuzzStrategy, new BuzzPrinter(writer));
-		pairs ~= strategyPrinterPair(new NoFizzNoBuzzStrategy, new IntegerPassThroughPrinter(writer));
-		pairs ~= strategyPrinterPair(new EverythingPassThroughStrategy, new NewLinePrinter(writer));
+        pairs ~= strategyPrinterPair(new BuzzStrategy, new BuzzPrinter(writer));
+        pairs ~= strategyPrinterPair(new NoFizzNoBuzzStrategy, new IntegerPassThroughPrinter(writer));
+        pairs ~= strategyPrinterPair(new EverythingPassThroughStrategy, new NewLinePrinter(writer));
     }
 
     void executeStep(in FizzBuzzLoopCounter counter)

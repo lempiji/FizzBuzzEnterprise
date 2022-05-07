@@ -24,7 +24,8 @@ else
 		auto solution = new EnterpriseGradeSolution(new StdOutWriter);
 
 		// TODO TODO Refactor: Extract as Executor.
-		foreach (FizzBuzzLoopCounter loopCounter; FizzBuzzLoopCounterRange(Constants.LOOP_INIT_VALUE, Constants.DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE))
+		foreach (FizzBuzzLoopCounter loopCounter; FizzBuzzLoopCounterRange(Constants.LOOP_INIT_VALUE, Constants
+				.DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE))
 		{
 			solution.executeStep(loopCounter);
 		}

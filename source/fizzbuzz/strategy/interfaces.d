@@ -4,8 +4,8 @@ import fizzbuzz.common.types : FizzBuzzLoopCounter;
 
 ///
 enum isIsEvenlyDivisibleStrategy(T) = is(typeof((T strategy, in FizzBuzzLoopCounter theInteger) {
-    strategy.isEvenlyDivisible(theInteger);
-}));
+            strategy.isEvenlyDivisible(theInteger);
+        }));
 
 ///
 interface IsEvenlyDivisibleStrategy
@@ -33,7 +33,7 @@ class IsEvenlyDivisibleStrategyObject(T) : IsEvenlyDivisibleStrategy
     {
         this.strategy = strategy;
     }
-    
+
     bool isEvenlyDivisible(in FizzBuzzLoopCounter theInteger)
     {
         return this.strategy.isEvenlyDivisible(theInteger);

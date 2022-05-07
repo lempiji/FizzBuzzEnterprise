@@ -40,7 +40,7 @@ class WriterObject(T) : Writer if (isWriter!T)
     {
         this.writer.write(text);
     }
-    
+
     void writeln(in string text)
     {
         this.writer.writeln(text);

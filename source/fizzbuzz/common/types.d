@@ -36,7 +36,8 @@ unittest
 
     try
     {
-        for (FizzBuzzLoopCounter i = -1; i <= DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE; i++)
+        for (FizzBuzzLoopCounter i = -1; i <= DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE;
+            i++)
         {
 
         }
@@ -55,7 +56,8 @@ unittest
 
     try
     {
-        for (FizzBuzzLoopCounter i = -1; i <= DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE + 1; i++)
+        for (FizzBuzzLoopCounter i = -1; i <= DEFAULT_FIZZ_BUZZ_UPPER_LIMIT_VALUE + 1;
+            i++)
         {
 
         }
@@ -76,7 +78,8 @@ struct StrategyPrinterPair
     Printer printer;
 }
 
-StrategyPrinterPair strategyPrinterPair(TStrategy, TPrinter)(auto ref TStrategy strategy, auto ref TPrinter printer)
+StrategyPrinterPair strategyPrinterPair(TStrategy, TPrinter)(
+    auto ref TStrategy strategy, auto ref TPrinter printer)
 {
     return StrategyPrinterPair(evenlyDivisibleStrategyObject(strategy), printerObject(printer));
 }
